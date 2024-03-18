@@ -14,3 +14,16 @@
     padding: 10px;
     text-align: center;
 }
+
+.bingo-cell{
+    border: 1px solid #000;
+    padding: 10px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.checked {
+  background-color: #00ff00;
+  color: #fff;
+  text-decoration: line-through;
+}
