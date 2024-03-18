@@ -52,6 +52,10 @@ const quotes = [
 
 const bingoBoard = document.querySelector('.bingo-board');
 
+const counter = document.getElementById('counter');
+
+let checkedCount = 0
+
 const generateButton = document.getElementById('generateBoard');
 
 generateButton.addEventListener('click', generateNewBoard);
@@ -75,7 +79,19 @@ function generateNewBoard() {
 
 function toggleCell() {
     this.classList.toggle('checked');
+    if (this.classList.contains('checked')) {
+        checkedCount++;
+    } else {
+        checkedCount--;
+    }
+    updateCounter();
 }
+
+function updateCounter() {
+    counter.textContent = `Score : ${checkedCount}`;
+}
+
+
 
 function shuffleArray(array) {
     for (let i = array.length - 1; i > 0; i--) {
