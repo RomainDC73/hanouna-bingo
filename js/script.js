@@ -54,11 +54,19 @@ const bingoBoard = document.querySelector('.bingo-board');
 
 const counter = document.getElementById('counter');
 
+const successMessage = document.getElementById('successMessage');
+
 let checkedCount = 0
 
 const generateButton = document.getElementById('generateBoard');
 
-generateButton.addEventListener('click', generateNewBoard);
+generateButton.addEventListener('click', function() {
+    generateNewBoard();
+    checkedCount = 0;
+    updateCounter();
+    successMessage.textContent = '';
+
+});
 
 function generateNewBoard() {
     // Efface la grille précédente
@@ -85,6 +93,13 @@ function toggleCell() {
         checkedCount--;
     }
     updateCounter();
+
+    // Vérifie si toutes les cases sont cochées pour afficher un message de succès
+    if (checkedCount === 24) {
+        successMessage.textContent = 'Félicitations ! Vous avez cochées toutes les cases !';
+    } else {
+        successMessage.textContent = ''; // Efface le message si toutes les cases ne sont pas cochées
+    }
 }
 
 function updateCounter() {
