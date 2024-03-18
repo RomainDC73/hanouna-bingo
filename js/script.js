@@ -6,4 +6,7 @@ const quotes = [
     "Ah ça c'est exceptionnel",
     "Vous allez voir, c'est magique",
     "Il/Elle est magnifique/magique",
-]
+];
+
+const bingoBoard = document.querySelector('.bingo-board');
+
