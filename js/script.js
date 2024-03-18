@@ -1,3 +1,7 @@
+document.addEventListener('DOMContentLoaded', function() {
+    generateNewBoard();
+});
+
 const quotes = [
     "Quel bonheur d'être avec vous aujourd'hui",
     "Il va se passer plein de choses dans cette émission",
