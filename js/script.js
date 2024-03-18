@@ -67,8 +67,14 @@ function generateNewBoard() {
     for (let i = 0; i < 24; i++) {
         const cell = document.createElement('div');
         cell.textContent = shuffledQuotes[i];
+        cell.classList.add('bingo-cell');
+        cell.addEventListener('click', toggleCell);
         bingoBoard.appendChild(cell);
     }
+}
+
+function toggleCell() {
+    this.classList.toggle('checked');
 }
 
 function shuffleArray(array) {
