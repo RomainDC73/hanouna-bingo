@@ -49,7 +49,6 @@ const quotes = [
     "Je fais XX heurese d'antenne par jour / semaine",
 ];
 
-
 const bingoBoard = document.querySelector('.bingo-board');
 
 const counter = document.getElementById('counter');
