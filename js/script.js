@@ -99,6 +99,37 @@ function toggleCell() {
     } else {
         successMessage.textContent = ''; // Efface le message si toutes les cases ne sont pas cochées
     }
+
+    // Afficher un message d'encouragement aléatoire en fonction du nombre de cases cochées
+    const encouragementMessages = [
+        ["Continuez comme ça !", "", "Vous êtes sur la bonne voie !", "", "Bravo ! Vous avancez bien !"],
+        ["Vous êtes incroyable !", "", "Super ! Continuez ainsi !", "", "Vous faites du bon travail !"],
+        ["Vous êtes génial(e) !", "", "Vous êtes un(e) pro !", "", "Vous déchirez !"],
+        ["Continuez à progresser !", "", "Vous êtes une star !", "", "Vous pouvez le faire !"],
+        ["Allez, plus qu'un, tu peux le faire !"]
+    ];
+
+    let messageIndex;
+    if (checkedCount >= 0 && checkedCount < 5) {
+        messageIndex = 0;
+    } else if (checkedCount >= 5 && checkedCount < 10) {
+        messageIndex = 1;
+    } else if (checkedCount >= 10 && checkedCount < 15) {
+        messageIndex = 2;
+    } else if (checkedCount >= 15 && checkedCount < 23) {
+        messageIndex = 3;
+    } else {
+        messageIndex = 4;
+    }
+
+    const messagesForCount = encouragementMessages[messageIndex];
+    const randomIndex = Math.floor(Math.random() * messagesForCount.length);
+    messageElement.textContent = messagesForCount[randomIndex];
+
+    // Si toutes les cases sont cochées, ne pas afficher de message d'encouragement
+    if (checkedCount === 24) {
+        messageElement.textContent = '';
+    }
 }
 
 function updateCounter() {
