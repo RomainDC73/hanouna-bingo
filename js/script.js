@@ -97,17 +97,17 @@ function toggleCell() {
 
     // Vérifie si toutes les cases sont cochées pour afficher un message de succès
     if (checkedCount === 24) {
-        successMessage.textContent = 'Félicitations ! Vous avez cochées toutes les cases !';
+        successMessage.textContent = "Félicitations ! T'as coché toutes les cases ! Pauvre de toi, tu as dépassé ton temps de TPMP, va ouvrir un livre, ça ne te fera pas de mal";
     } else {
         successMessage.textContent = ''; // Efface le message si toutes les cases ne sont pas cochées
     }
 
     // Afficher un message d'encouragement aléatoire en fonction du nombre de cases cochées
     const encouragementMessages = [
-        ["Continuez comme ça !", "", "Vous êtes sur la bonne voie !", "", "Bravo ! Vous avancez bien !"],
-        ["Vous êtes incroyable !", "", "Super ! Continuez ainsi !", "", "Vous faites du bon travail !"],
-        ["Vous êtes génial(e) !", "", "Vous êtes un(e) pro !", "", "Vous déchirez !"],
-        ["Continuez à progresser !", "", "Vous êtes une star !", "", "Vous pouvez le faire !"],
+        ["Continue comme ça !", "", "T'es sur la bonne voie !", "", "Bravo ! T'avances bien !"],
+        ["T'es incroyable !", "", "Super ! Continue comme ça !", "", "Tu fais du bon boulot !"],
+        ["Tu es génial(e) !", "", "Mais tu es un(e) pro !", "", "Tu déchires !"],
+        ["Oh la la, Baba est fier de vous !", "", "Vous êtes une star !", "", "Est-ce que tu vas arriver au bout de la grille ? Suspense..."],
         ["Allez, plus qu'un, tu peux le faire !"]
     ];
 
