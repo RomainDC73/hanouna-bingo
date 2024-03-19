@@ -60,11 +60,13 @@ let checkedCount = 0
 const generateButton = document.getElementById('generateBoard');
 
 generateButton.addEventListener('click', function() {
-    generateNewBoard();
-    checkedCount = 0;
-    updateCounter();
-    successMessage.textContent = '';
-
+    const confirmation = confirm('Êtes-vous sûr de vouloir générer une nouvelle grille ?');
+    if (confirmation){
+        generateNewBoard();
+        checkedCount = 0;
+        updateCounter();
+        successMessage.textContent = '';
+    }
 });
 
 function generateNewBoard() {
