@@ -46,7 +46,7 @@ const quotes = [
     "On donne la parole à tout le monde",
     "TPMP, c'est pas de montage, pas de triche",
     "Bolloré c'est un grand monsieur",
-    "Je fais XX heurese d'antenne par jour / semaine",
+    "Je fais XX heures d'antenne par jour / semaine",
 ];
 
 const bingoBoard = document.querySelector('.bingo-board');
@@ -95,9 +95,19 @@ function toggleCell() {
     }
     updateCounter();
 
-    // Vérifie si toutes les cases sont cochées pour afficher un message de succès
+    // Tableau de messages de succès aléatoires
+    const  successMessages = [
+        "Félicitations ! T'as coché toutes les cases ! Pauvre de toi, tu as dépassé ton temps de TPMP, va ouvrir un livre, ça ne te fera pas de mal.",
+        "Well done ! Assez d'Hanouna pour aujourd'hui, il est temps de faire quelque chose de plus intéressant.",
+        "Incroyable, il l'a fait ! Il sort vraiment toujours les mêmes bêtises, c'est trop facile.",
+        "Bravo ! Après tout ce temps d'Hanouna, tu dois être éreinté(e). Prends une bonne pause, loin de C8, pendant 10 ans. Au moins."
+    ];
+    
+    // Vérifie si toutes les cases sont cochées pour afficher un message de succès aléatoire
     if (checkedCount === 24) {
-        successMessage.textContent = "Félicitations ! T'as coché toutes les cases ! Pauvre de toi, tu as dépassé ton temps de TPMP, va ouvrir un livre, ça ne te fera pas de mal";
+        // Choisis un message aléatoire parmi les messages de succès
+        const randomIndex = Math.floor(Math.random() * successMessages.length);
+        successMessage.textContent = successMessages[randomIndex];
     } else {
         successMessage.textContent = ''; // Efface le message si toutes les cases ne sont pas cochées
     }
@@ -107,7 +117,7 @@ function toggleCell() {
         ["Continue comme ça !", "", "T'es sur la bonne voie !", "", "Bravo ! T'avances bien !"],
         ["T'es incroyable !", "", "Super ! Continue comme ça !", "", "Tu fais du bon boulot !"],
         ["Tu es génial(e) !", "", "Mais tu es un(e) pro !", "", "Tu déchires !"],
-        ["Oh la la, Baba est fier de vous !", "", "Vous êtes une star !", "", "Est-ce que tu vas arriver au bout de la grille ? Suspense..."],
+        ["Oh la la, Baba est fier de toi !", "", "T'es une star !", "", "Est-ce que tu vas arriver au bout de la grille ? Suspense..."],
         ["Allez, plus qu'un, tu peux le faire !"]
     ];
 
