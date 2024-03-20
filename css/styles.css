@@ -19,6 +19,7 @@ h1 {
 
 h2 {
   font-family: 'Anek Devanagari', sans-serif;
+  text-transform: uppercase;
   font-size: 25px;  
   font-weight: bold;
   color: #fff;
@@ -27,8 +28,21 @@ h2 {
 
 p {
   font-family: 'Anek Devanagari', sans-serif;
-  font-size: 20px;
+  font-size: 18px;
   color: #fff;
+}
+
+#counter {
+  font-family: 'Anek Devanagari', sans-serif;
+  font-size: 18px;
+  font-weight: bold;
+  color: #496989;
+  border: 2px solid #F49E4C;
+  background-color: #F49E4C; /* Ajout de la couleur de fond orange */
+  border-radius: 5px; /* Ajout du border radius */
+  padding: 10px; /* Ajout de l'espacement interne pour éviter que le texte touche le bord */
+  display: inline-block; /* Pour que le background color ne s'étende que sur la largeur du texte */
+  margin-bottom: 2rem;
 }
 
 .bingo-board {
@@ -39,7 +53,7 @@ p {
   padding: 2rem;
   margin-bottom: 2rem;
   border-radius: 5px;
-  background-color: #58A399;
+  background-color: #607F9E;
 }
 
 .bingo-board div {
