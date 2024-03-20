@@ -55,6 +55,11 @@ const counter = document.getElementById('counter');
 
 const successMessage = document.getElementById('successMessage');
 
+// Création de l'élément de message
+const messageElement = document.createElement('div');
+messageElement.classList.add('message-element');
+document.body.appendChild(messageElement); // Ajout à body pour le positionnement global
+
 let checkedCount = 0
 
 const generateButton = document.getElementById('generateBoard');
@@ -103,18 +108,18 @@ function toggleCell() {
         "Bravo ! Après tout ce temps d'Hanouna, tu dois être éreinté(e). Prends une bonne pause, loin de C8, pendant 10 ans. Au moins."
     ];
     
-    // Vérifie si toutes les cases sont cochées pour afficher un message de succès aléatoire
-    if (checkedCount === 24) {
-        // Choisis un message aléatoire parmi les messages de succès
-        const randomIndex = Math.floor(Math.random() * successMessages.length);
-        successMessage.textContent = successMessages[randomIndex];
-    } else {
-        successMessage.textContent = ''; // Efface le message si toutes les cases ne sont pas cochées
-    }
+// Vérifie si toutes les cases sont cochées pour afficher un message de succès aléatoire
+if (checkedCount === 24) {
+    // Choisis un message aléatoire parmi les messages de succès
+    const randomIndex = Math.floor(Math.random() * successMessages.length);
+    showMessage(successMessages[randomIndex], true);
+} else {
+    successMessage.textContent = ''; // Efface le message si toutes les cases ne sont pas cochées
+}
 
     // Afficher un message d'encouragement aléatoire en fonction du nombre de cases cochées
     const encouragementMessages = [
-        ["Continue comme ça !", " ", "T'es sur la bonne voie !", " ", "Bravo ! T'avances bien !"],
+        ["Continue comme ça !", "", "T'es sur la bonne voie !", "", "Bravo ! T'avances bien !"],
         ["T'es incroyable !", " ", "Super ! Continue comme ça !", " ", "Tu fais du bon boulot !"],
         ["Tu es génial(e) !", " ", "Mais tu es un(e) pro !", " ", "Tu déchires !"],
         ["Oh la la, Baba est fier de toi !", " ", "T'es une star !", " ", "Est-ce que tu vas arriver au bout de la grille ? Suspense..."],
@@ -136,11 +141,11 @@ function toggleCell() {
 
     const messagesForCount = encouragementMessages[messageIndex];
     const randomIndex = Math.floor(Math.random() * messagesForCount.length);
-    messageElement.textContent = messagesForCount[randomIndex];
+    showMessage(messagesForCount[randomIndex], false);
 
     // Si toutes les cases sont cochées, ne pas afficher de message d'encouragement
     if (checkedCount === 24) {
-        messageElement.textContent = '';
+        showMessage('', false);
     }
 }
 
@@ -148,7 +153,23 @@ function updateCounter() {
     counter.textContent = `SCORE : ${checkedCount}`;
 }
 
+function showMessage(message, isSuccessMessage) {
+    // Ajouter du style pour le message
+    messageElement.textContent = message;
+    messageElement.classList.add('visible'); // Ajouter la classe 'visible'
+    if (isSuccessMessage) {
+        messageElement.classList.add('success');
+    }
+    
+    // Ajouter le message à la page
+    document.body.appendChild(messageElement);
 
+    // Effacer le message après 5 secondes
+    setTimeout(function() {
+        messageElement.classList.remove('visible'); // Supprimer la classe 'visible'
+        messageElement.remove();
+    }, 2000);
+}
 
 function shuffleArray(array) {
     for (let i = array.length - 1; i > 0; i--) {
