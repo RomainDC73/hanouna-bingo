@@ -2,7 +2,7 @@
 
 
 body {
-  background-color: #496989;;
+  background-color: #496989;
   text-align: center;
 }
 
@@ -57,7 +57,7 @@ p {
 }
 
 .bingo-board div {
-  border: 1px solid #fff;
+
   padding: 10px;
   text-align: center;
 }
@@ -73,12 +73,12 @@ p {
   font-family: 'Anek Devanagari', sans-serif;
   font-size: 18px;
   text-align: center;
-  
   cursor: pointer;
 }
 
 .checked {
-  background-color: #A8CD9F;
+  background-color: #47E5BC;
+  border: 1px solid #496989;
   color: #fff;
   text-decoration: line-through;
 }
