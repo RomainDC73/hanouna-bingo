@@ -114,10 +114,10 @@ function toggleCell() {
 
     // Afficher un message d'encouragement aléatoire en fonction du nombre de cases cochées
     const encouragementMessages = [
-        ["Continue comme ça !", "", "T'es sur la bonne voie !", "", "Bravo ! T'avances bien !"],
-        ["T'es incroyable !", "", "Super ! Continue comme ça !", "", "Tu fais du bon boulot !"],
-        ["Tu es génial(e) !", "", "Mais tu es un(e) pro !", "", "Tu déchires !"],
-        ["Oh la la, Baba est fier de toi !", "", "T'es une star !", "", "Est-ce que tu vas arriver au bout de la grille ? Suspense..."],
+        ["Continue comme ça !", " ", "T'es sur la bonne voie !", " ", "Bravo ! T'avances bien !"],
+        ["T'es incroyable !", " ", "Super ! Continue comme ça !", " ", "Tu fais du bon boulot !"],
+        ["Tu es génial(e) !", " ", "Mais tu es un(e) pro !", " ", "Tu déchires !"],
+        ["Oh la la, Baba est fier de toi !", " ", "T'es une star !", " ", "Est-ce que tu vas arriver au bout de la grille ? Suspense..."],
         ["Allez, plus qu'un, tu peux le faire !"]
     ];
 
@@ -145,7 +145,7 @@ function toggleCell() {
 }
 
 function updateCounter() {
-    counter.textContent = `Score : ${checkedCount}`;
+    counter.textContent = `SCORE : ${checkedCount}`;
 }
 
 
