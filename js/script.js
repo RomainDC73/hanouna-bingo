@@ -53,7 +53,7 @@ const bingoBoard = document.querySelector('.bingo-board');
 
 const counter = document.getElementById('counter');
 
-const successMessage = document.getElementById('successMessage');
+// const successMessage = document.getElementById('successMessage');
 
 // Création de l'élément de message
 const messageElement = document.createElement('div');
@@ -100,22 +100,6 @@ function toggleCell() {
     }
     updateCounter();
 
-    // Tableau de messages de succès aléatoires
-    const  successMessages = [
-        "Félicitations ! T'as coché toutes les cases ! Pauvre de toi, tu as dépassé ton temps de TPMP, va ouvrir un livre, ça ne te fera pas de mal.",
-        "Well done ! Assez d'Hanouna pour aujourd'hui, il est temps de faire quelque chose de plus intéressant.",
-        "Incroyable, il l'a fait ! Il sort vraiment toujours les mêmes bêtises, c'est trop facile.",
-        "Bravo ! Après tout ce temps d'Hanouna, tu dois être éreinté(e). Prends une bonne pause, loin de C8, pendant 10 ans. Au moins."
-    ];
-    
-// Vérifie si toutes les cases sont cochées pour afficher un message de succès aléatoire
-if (checkedCount === 24) {
-    // Choisis un message aléatoire parmi les messages de succès
-    const randomIndex = Math.floor(Math.random() * successMessages.length);
-    showMessage(successMessages[randomIndex], true);
-} else {
-    successMessage.textContent = ''; // Efface le message si toutes les cases ne sont pas cochées
-}
 
     // Afficher un message d'encouragement aléatoire en fonction du nombre de cases cochées
     const encouragementMessages = [
@@ -123,7 +107,14 @@ if (checkedCount === 24) {
         ["T'es incroyable !", " ", "Super ! Continue comme ça !", " ", "Tu fais du bon boulot !"],
         ["Tu es génial(e) !", " ", "Mais tu es un(e) pro !", " ", "Tu déchires !"],
         ["Oh la la, Baba est fier de toi !", " ", "T'es une star !", " ", "Est-ce que tu vas arriver au bout de la grille ? Suspense..."],
+        [
+            "Félicitations ! T'as coché toutes les cases ! Pauvre de toi, tu as dépassé ton temps de TPMP, va ouvrir un livre, ça ne te fera pas de mal.",
+            "Well done ! Assez d'Hanouna pour aujourd'hui, il est temps de faire quelque chose de plus intéressant.",
+            "Incroyable, il l'a fait ! Il sort vraiment toujours les mêmes bêtises, c'est trop facile.",
+            "Bravo ! Après tout ce temps d'Hanouna, tu dois être éreinté(e). Prends une bonne pause, loin de C8, pendant 10 ans. Au moins."
+        ],
         ["Allez, plus qu'un, tu peux le faire !"]
+        
     ];
 
     let messageIndex;
@@ -135,29 +126,29 @@ if (checkedCount === 24) {
         messageIndex = 2;
     } else if (checkedCount >= 15 && checkedCount < 23) {
         messageIndex = 3;
-    } else {
+    } else if (checkedCount === 24) {
         messageIndex = 4;
+    } else {
+        messageIndex = 5;
     }
 
     const messagesForCount = encouragementMessages[messageIndex];
     const randomIndex = Math.floor(Math.random() * messagesForCount.length);
     showMessage(messagesForCount[randomIndex], false);
 
-    // Si toutes les cases sont cochées, ne pas afficher de message d'encouragement
-    if (checkedCount === 24) {
-        showMessage('', false);
-    }
 }
 
 function updateCounter() {
     counter.textContent = `SCORE : ${checkedCount}`;
 }
 
-function showMessage(message, isSuccessMessage) {
+function showMessage(message, isEncouragement) {
     // Ajouter du style pour le message
     messageElement.textContent = message;
     messageElement.classList.add('visible'); // Ajouter la classe 'visible'
-    if (isSuccessMessage) {
+    
+    // Ajouter la classe 'success' si c'est un message de succès
+    if (!isEncouragement) {
         messageElement.classList.add('success');
     }
     
@@ -168,7 +159,7 @@ function showMessage(message, isSuccessMessage) {
     setTimeout(function() {
         messageElement.classList.remove('visible'); // Supprimer la classe 'visible'
         messageElement.remove();
-    }, 2000);
+    }, 2500);
 }
 
 function shuffleArray(array) {
