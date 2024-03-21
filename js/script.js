@@ -53,7 +53,14 @@ const bingoBoard = document.querySelector('.bingo-board');
 
 const counter = document.getElementById('counter');
 
-// const successMessage = document.getElementById('successMessage');
+const successMessage = document.getElementById('successMessage');
+
+const successMessages = [
+    "Félicitations ! T'as coché toutes les cases ! Pauvre de toi, tu as dépassé ton temps de TPMP, va ouvrir un livre, ça ne te fera pas de mal.",
+    "Well done ! Assez d'Hanouna pour aujourd'hui, il est temps de faire quelque chose de plus intéressant.",
+    "Incroyable, il l'a fait ! Il sort vraiment toujours les mêmes bêtises, c'est trop facile.",
+    "Bravo ! Après tout ce temps d'Hanouna, tu dois être éreinté(e). Prends une bonne pause, loin de C8, pendant 10 ans. Au moins."
+];
 
 // Création de l'élément de message
 const messageElement = document.createElement('div');
@@ -100,58 +107,46 @@ function toggleCell() {
     }
     updateCounter();
 
-
-    // Afficher un message d'encouragement aléatoire en fonction du nombre de cases cochées
-    const encouragementMessages = [
-        ["Continue comme ça !", "", "T'es sur la bonne voie !", "", "Bravo ! T'avances bien !"],
-        ["T'es incroyable !", " ", "Super ! Continue comme ça !", " ", "Tu fais du bon boulot !"],
-        ["Tu es génial(e) !", " ", "Mais tu es un(e) pro !", " ", "Tu déchires !"],
-        ["Oh la la, Baba est fier de toi !", " ", "T'es une star !", " ", "Est-ce que tu vas arriver au bout de la grille ? Suspense..."],
-        [
-            "Félicitations ! T'as coché toutes les cases ! Pauvre de toi, tu as dépassé ton temps de TPMP, va ouvrir un livre, ça ne te fera pas de mal.",
-            "Well done ! Assez d'Hanouna pour aujourd'hui, il est temps de faire quelque chose de plus intéressant.",
-            "Incroyable, il l'a fait ! Il sort vraiment toujours les mêmes bêtises, c'est trop facile.",
-            "Bravo ! Après tout ce temps d'Hanouna, tu dois être éreinté(e). Prends une bonne pause, loin de C8, pendant 10 ans. Au moins."
-        ],
-        ["Allez, plus qu'un, tu peux le faire !"]
-        
-    ];
-
-    let messageIndex;
-    if (checkedCount >= 0 && checkedCount < 5) {
-        messageIndex = 0;
-    } else if (checkedCount >= 5 && checkedCount < 10) {
-        messageIndex = 1;
-    } else if (checkedCount >= 10 && checkedCount < 15) {
-        messageIndex = 2;
-    } else if (checkedCount >= 15 && checkedCount < 23) {
-        messageIndex = 3;
-    } else if (checkedCount === 24) {
-        messageIndex = 4;
+    if (checkedCount === 24) {
+        const randomIndex = Math.floor(Math.random() * successMessages.length);
+        successMessage.textContent = successMessages[randomIndex];
     } else {
-        messageIndex = 5;
+        const encouragementMessages = [
+            ["Continue comme ça !", "", "T'es sur la bonne voie !", "", "Bravo ! T'avances bien !"],
+            ["T'es incroyable !", " ", "Super ! Continue comme ça !", " ", "Tu fais du bon boulot !"],
+            ["Tu es génial(e) !", " ", "Mais tu es un(e) pro !", " ", "Tu déchires !"],
+            ["Oh la la, Baba est fier de toi !", " ", "T'es une star !", " ", "Est-ce que tu vas arriver au bout de la grille ? Suspense..."],
+            ["Allez, plus qu'un, tu peux le faire !"]
+        ];
+
+        let messageIndex;
+        if (checkedCount >= 0 && checkedCount < 5) {
+            messageIndex = 0;
+        } else if (checkedCount >= 5 && checkedCount < 10) {
+            messageIndex = 1;
+        } else if (checkedCount >= 10 && checkedCount < 15) {
+            messageIndex = 2;
+        } else if (checkedCount >= 15 && checkedCount < 23) {
+            messageIndex = 3;
+        } else {
+            messageIndex = 4;
+        }
+
+        const messagesForCount = encouragementMessages[messageIndex];
+        const randomIndex = Math.floor(Math.random() * messagesForCount.length);
+        showMessage(messagesForCount[randomIndex], false);
     }
-
-    const messagesForCount = encouragementMessages[messageIndex];
-    const randomIndex = Math.floor(Math.random() * messagesForCount.length);
-    showMessage(messagesForCount[randomIndex], false);
-
 }
 
 function updateCounter() {
     counter.textContent = `SCORE : ${checkedCount}`;
 }
 
-function showMessage(message, isEncouragement) {
+function showMessage(message) {
     // Ajouter du style pour le message
     messageElement.textContent = message;
     messageElement.classList.add('visible'); // Ajouter la classe 'visible'
-    
-    // Ajouter la classe 'success' si c'est un message de succès
-    if (!isEncouragement) {
-        messageElement.classList.add('success');
-    }
-    
+        
     // Ajouter le message à la page
     document.body.appendChild(messageElement);
 
@@ -162,6 +157,8 @@ function showMessage(message, isEncouragement) {
     }, 2500);
 }
 
+
+
 function shuffleArray(array) {
     for (let i = array.length - 1; i > 0; i--) {
         const j = Math.floor(Math.random() * (i + 1));
@@ -170,3 +167,4 @@ function shuffleArray(array) {
     }
     return array;
 }
+
