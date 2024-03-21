@@ -44,6 +44,28 @@ p {
   margin-bottom: 2rem;
 }
 
+#successMessage {
+  font-family: 'Anek Devanagari', sans-serif;
+  text-transform: uppercase;
+  font-size: 25px;  
+  font-weight: bold;
+  color: #F49E4C;
+  padding-bottom: 2rem;
+}
+
+#generateBoard {
+  background-color: #F49E4C;
+  border: none;
+  font-family: 'Anek Devanagari', sans-serif;
+  color: #496989;
+  font-size: 15px;
+  font-weight: bold;
+  padding: 10px;
+  margin-bottom: 2rem;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
 .bingo-board {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
@@ -103,14 +125,6 @@ p {
   display: block; /* Rendre l'élément visible lorsque la classe 'visible' est ajoutée */
 }
 
-#successMessage {
-  font-family: 'Anek Devanagari', sans-serif;
-  text-transform: uppercase;
-  font-size: 25px;  
-  font-weight: bold;
-  color: #F49E4C;
-  padding-bottom: 2rem;
-}
 
 @media screen and (max-width: 768px) {
   .bingo-board {
