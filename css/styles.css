@@ -43,6 +43,22 @@ img, h1, h2 {
   margin-bottom: 5px; /* Ajustez la marge inférieure selon vos besoins */
 }
 
+footer {
+  background-color: #607F9E;
+  width: 100%;
+  margin-top: 4rem;
+  padding-top: 1rem;
+}
+
+footer p {
+  font-size: 14px;
+}
+
+footer a {
+  color: #F49E4C;
+  text-decoration: none;
+}
+
 #counter {
   font-family: 'Anek Devanagari', sans-serif;
   font-size: 18px;
