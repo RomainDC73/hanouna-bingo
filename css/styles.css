@@ -39,6 +39,10 @@ img {
   max-width: 100%; /* Assurez-vous que l'image ne dépasse pas la largeur du conteneur */
 }
 
+img, h1, h2 {
+  margin-bottom: 5px; /* Ajustez la marge inférieure selon vos besoins */
+}
+
 #counter {
   font-family: 'Anek Devanagari', sans-serif;
   font-size: 18px;
@@ -67,7 +71,6 @@ img {
   font-family: 'Anek Devanagari', sans-serif;
   color: #496989;
   font-size: 15px;
-  font-weight: bold;
   padding: 10px;
   margin-bottom: 2rem;
   border-radius: 5px;
