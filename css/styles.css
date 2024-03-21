@@ -31,6 +31,14 @@ p {
   color: #fff;
 }
 
+img {
+  width: 10%; /* Réglez la largeur de l'image selon vos besoins */
+  height: auto; /* Gardez la hauteur automatique pour préserver les proportions */
+  display: block; /* Assurez-vous que l'image est affichée comme un bloc pour pouvoir utiliser margin:auto */
+  margin: auto; /* Centrez l'image horizontalement en utilisant les marges automatiques */
+  max-width: 100%; /* Assurez-vous que l'image ne dépasse pas la largeur du conteneur */
+}
+
 #counter {
   font-family: 'Anek Devanagari', sans-serif;
   font-size: 18px;
@@ -130,10 +138,19 @@ p {
   .bingo-board {
       grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Ajuste les colonnes pour les écrans de taille moyenne */
   }
+
+  img {
+    width: 30%;
+  }
+
 }
 
 @media screen and (max-width: 480px) {
   .bingo-board {
       grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); /* Ajuste les colonnes pour les petits écrans */
+  }
+
+  img {
+    width: 50%;
   }
 }
