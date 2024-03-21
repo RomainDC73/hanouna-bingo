@@ -103,6 +103,15 @@ p {
   display: block; /* Rendre l'élément visible lorsque la classe 'visible' est ajoutée */
 }
 
+#successMessage {
+  font-family: 'Anek Devanagari', sans-serif;
+  text-transform: uppercase;
+  font-size: 25px;  
+  font-weight: bold;
+  color: #F49E4C;
+  padding-bottom: 2rem;
+}
+
 @media screen and (max-width: 768px) {
   .bingo-board {
       grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Ajuste les colonnes pour les écrans de taille moyenne */
