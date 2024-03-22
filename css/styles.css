@@ -1,6 +1,5 @@
 @import url(https://fonts.bunny.net/css?family=anek-devanagari:100,400|bevan:400);
 
-
 body {
   background-color: #496989;
   text-align: center;
@@ -30,15 +29,15 @@ p {
 }
 
 img {
-  width: 10%; /* Réglez la largeur de l'image selon vos besoins */
-  height: auto; /* Gardez la hauteur automatique pour préserver les proportions */
-  display: block; /* Assurez-vous que l'image est affichée comme un bloc pour pouvoir utiliser margin:auto */
-  margin: auto; /* Centrez l'image horizontalement en utilisant les marges automatiques */
-  max-width: 100%; /* Assurez-vous que l'image ne dépasse pas la largeur du conteneur */
+  width: 10%;
+  height: auto;
+  display: block;
+  margin: auto;
+  max-width: 100%;
 }
 
 img, h1, h2 {
-  margin-bottom: 5px; /* Ajustez la marge inférieure selon vos besoins */
+  margin-bottom: 5px;
 }
 
 footer {
@@ -63,10 +62,10 @@ footer a {
   font-weight: bold;
   color: #496989;
   border: 2px solid #F49E4C;
-  background-color: #F49E4C; /* Ajout de la couleur de fond orange */
-  border-radius: 5px; /* Ajout du border radius */
-  padding: 10px; /* Ajout de l'espacement interne pour éviter que le texte touche le bord */
-  display: inline-block; /* Pour que le background color ne s'étende que sur la largeur du texte */
+  background-color: #F49E4C;
+  border-radius: 5px;
+  padding: 10px; 
+  display: inline-block;
   margin-bottom: 1rem;
 }
 
@@ -113,9 +112,9 @@ footer a {
 }
 
 .bingo-cell {
-  display: flex; /* Utilisation de flexbox */
-  align-items: center; /* Centrage vertical */
-  justify-content: center; /* Centrage horizontal */
+  display: flex;
+  align-items: center;
+  justify-content: center;
   border: 1px solid #fff;
   border-radius: 5px;
   padding: 10px;
@@ -134,30 +133,28 @@ footer a {
 }
 
 .message-element {
-  display: none; /* Masquer l'élément par défaut */
+  display: none;
   position: fixed;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  /* background-color: rgba(0, 0, 0, 0.7);  */
   color: #F0F;
   font-family: 'Bevan', sans-serif;
   text-transform: uppercase;
   font-size: 50px;
   letter-spacing: 5px;
-  padding: 20px; /* Espacement intérieur */
-  border-radius: 10px; /* Rayon de la bordure */
-  z-index: 9999; /* Pour s'assurer que le message est au-dessus de tout le reste */
+  padding: 20px; 
+  border-radius: 10px;
+  z-index: 9999;
 }
 
 .message-element.visible {
-  display: block; /* Rendre l'élément visible lorsque la classe 'visible' est ajoutée */
+  display: block;
 }
 
-
 @media screen and (max-width: 768px) {
-  .bingo-board {
-      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Ajuste les colonnes pour les écrans de taille moyenne */
+  .bingo-board {~∞
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
   }
 
   img {
@@ -167,7 +164,7 @@ footer a {
 
 @media screen and (max-width: 480px) {
   .bingo-board {
-      grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); /* Ajuste les colonnes pour les petits écrans */
+      grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
   }
 
   img {

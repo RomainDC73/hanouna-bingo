@@ -62,10 +62,10 @@ const successMessages = [
     "Bravo ! Après tout ce temps d'Hanouna, tu dois être éreinté(e). Prends une bonne pause, loin de C8, pendant 10 ans. Au moins."
 ];
 
-// Création de l'élément de message
+
 const messageElement = document.createElement('div');
 messageElement.classList.add('message-element');
-document.body.appendChild(messageElement); // Ajout à body pour le positionnement global
+document.body.appendChild(messageElement);
 
 let checkedCount = 0
 
@@ -82,13 +82,10 @@ generateButton.addEventListener('click', function() {
 });
 
 function generateNewBoard() {
-    // Efface la grille précédente
     bingoBoard.innerHTML = '';
 
-    // Générer une grille aléatoire
     const shuffledQuotes = shuffleArray(quotes.slice());
 
-    // Générer une grille de bingo 5x5 avec des phrases aléatoires
     for (let i = 0; i < 24; i++) {
         const cell = document.createElement('div');
         cell.textContent = shuffledQuotes[i];
@@ -142,11 +139,10 @@ function toggleCell() {
 }
 
 function triggerConfetti() {
-    // Démarre la pluie de confettis
     confetti({
-        particleCount: 100, // Nombre de confettis
-        spread: 160, // Étalement
-        origin: { y: 0.6 } // Position initiale
+        particleCount: 100,
+        spread: 160,
+        origin: { y: 0.6 }
     });
 }
 
@@ -155,26 +151,20 @@ function updateCounter() {
 }
 
 function showMessage(message) {
-    // Ajouter du style pour le message
     messageElement.textContent = message;
-    messageElement.classList.add('visible'); // Ajouter la classe 'visible'
+    messageElement.classList.add('visible');
         
-    // Ajouter le message à la page
     document.body.appendChild(messageElement);
 
-    // Effacer le message après 5 secondes
     setTimeout(function() {
-        messageElement.classList.remove('visible'); // Supprimer la classe 'visible'
+        messageElement.classList.remove('visible');
         messageElement.remove();
-    }, 2500);
+    }, 3000);
 }
-
-
 
 function shuffleArray(array) {
     for (let i = array.length - 1; i > 0; i--) {
         const j = Math.floor(Math.random() * (i + 1));
-        // Échanger array[i] et array[j]
         [array[i], array[j]] = [array[j], array[i]];
     }
     return array;
