@@ -13,7 +13,6 @@ h1 {
   letter-spacing: 5px;
   color: #F49E4C;
   border-radius: 5px;
-
 }
 
 h2 {
@@ -22,7 +21,6 @@ h2 {
   font-size: 25px;  
   font-weight: bold;
   color: #fff;
-
 }
 
 p {
@@ -69,7 +67,7 @@ footer a {
   border-radius: 5px; /* Ajout du border radius */
   padding: 10px; /* Ajout de l'espacement interne pour éviter que le texte touche le bord */
   display: inline-block; /* Pour que le background color ne s'étende que sur la largeur du texte */
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
 }
 
 #successMessage {
@@ -166,7 +164,6 @@ footer a {
   img {
     width: 30%;
   }
-
 }
 
 @media screen and (max-width: 480px) {
