@@ -1,7 +1,5 @@
 # Bingo Hanouna
 
-![language](https://img.shields.io/badge/logo-javascript-blue?logo=javascript)
-
 Bingo Hanouna is a project inspired by the TV show "Touche Pas à Mon Poste!" (TPMP) and its host, Cyril Hanouna.
 Dude is always saying the same shitty expressions, over and over and over and over.
 This interactive bingo game allows viewers of the show to play along while watching, checking off squares corresponding to typical phrases or recurring moments from the show.
