@@ -93,6 +93,11 @@ footer a {
   cursor: pointer;
 }
 
+#generateBoard:hover {
+  background-color: #607F9E;
+  color: #F49E4C
+}
+
 .bingo-board {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
