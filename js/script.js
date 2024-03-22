@@ -110,6 +110,9 @@ function toggleCell() {
     if (checkedCount === 24) {
         const randomIndex = Math.floor(Math.random() * successMessages.length);
         successMessage.textContent = successMessages[randomIndex];
+
+        triggerConfetti();
+
     } else {
         const encouragementMessages = [
             ["Continue comme ça !", "", "T'es sur la bonne voie !", "", "Bravo ! T'avances bien !"],
@@ -136,6 +139,15 @@ function toggleCell() {
         const randomIndex = Math.floor(Math.random() * messagesForCount.length);
         showMessage(messagesForCount[randomIndex], false);
     }
+}
+
+function triggerConfetti() {
+    // Démarre la pluie de confettis
+    confetti({
+        particleCount: 100, // Nombre de confettis
+        spread: 160, // Étalement
+        origin: { y: 0.6 } // Position initiale
+    });
 }
 
 function updateCounter() {
