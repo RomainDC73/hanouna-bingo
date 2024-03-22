@@ -72,7 +72,7 @@ let checkedCount = 0
 const generateButton = document.getElementById('generateBoard');
 
 generateButton.addEventListener('click', function() {
-    const confirmation = confirm('Êtes-vous sûr de vouloir générer une nouvelle grille ?');
+    const confirmation = confirm('Eh Baba ! T\'es certain de vouloir générer une nouvelle grille ?');
     if (confirmation){
         generateNewBoard();
         checkedCount = 0;
