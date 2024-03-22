@@ -1,5 +1,9 @@
 # Bingo Hanouna
 
+![HTML logo](https://upload.wikimedia.org/wikipedia/commons/6/61/HTML5_logo_and_wordmark.svg "HTML")
+![CSS logo](https://upload.wikimedia.org/wikipedia/commons/d/d5/CSS3_logo_and_wordmark.svg "CSS")
+![JavaScript logo](https://upload.wikimedia.org/wikipedia/commons/9/99/Unofficial_JavaScript_logo_2.svg "JavaScript")
+
 Bingo Hanouna is a project inspired by the TV show "Touche Pas à Mon Poste!" (TPMP) and its host, Cyril Hanouna.
 Dude is always saying the same shitty expressions, over and over and over and over.
 This interactive bingo game allows viewers of the show to play along while watching, checking off squares corresponding to typical phrases or recurring moments from the show.
@@ -31,10 +35,6 @@ The project is developed in JavaScript and is designed to be used during the bro
 ## How to Contribute
 
 The project is open source and contributions are welcome! If you have suggestions for improvement, ideas for new features, or if you'd like to report a bug, feel free to create an issue or propose a pull request on GitHub.
-
-## License
-
-This project is licensed under the MIT License. See the `LICENSE` file for details.
 
 ## Author
 
